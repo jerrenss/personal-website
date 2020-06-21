@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {},
   banner: {
     height: '100vh',
-    backgroundImage: `url('/home/banner.png')`,
+    backgroundImage: `url('/Home/banner.png')`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
