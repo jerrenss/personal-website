@@ -1,11 +1,10 @@
 import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import { Box, Container, Typography, Paper } from '@material-ui/core'
-import 'fontsource-roboto'
 
 const useStyles = makeStyles((theme) => ({
   defaultText: {
-    fontFamily: 'fontsource-roboto',
+    fontFamily: 'Montserrat',
     color: 'white',
   },
 }))
