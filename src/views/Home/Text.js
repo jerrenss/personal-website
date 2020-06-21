@@ -2,6 +2,7 @@ import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import { Box, Typography } from '@material-ui/core'
 import { PALETTE, FONTS } from '../../utils/const'
+import Typewriter from 'typewriter-effect'
 
 const defaultText = {
   fontFamily: FONTS.montserrat,
@@ -21,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
   interestText: {
     ...defaultText,
+    fontSize: theme.typography.pxToRem(20),
+    fontWeight: 500,
   },
 }))
 
@@ -35,9 +38,15 @@ const Text = (props) => {
       <Typography variant="h2" className={classes.nameText}>
         Gerren Seow
       </Typography>
-      <Typography variant="h6" className={classes.interestText}>
-        A Web Development Enthusiast
-      </Typography>
+      <Typewriter
+        options={{
+          wrapperClassName: classes.interestText,
+          cursorClassName: classes.interestText,
+          strings: ['A Web Development Enthusiast'],
+          autoStart: true,
+          loop: true,
+        }}
+      />
     </Box>
   )
 }
