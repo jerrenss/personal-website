@@ -1,7 +1,9 @@
 import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
-import { Box, Card, Container, Typography, Paper } from '@material-ui/core'
-import Text from '../Banner/Text'
+import { Box, Container, Paper } from '@material-ui/core'
+import Text from './Text'
+import About from './About'
+import Experience from './Experience'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -19,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(40),
     },
   },
-  image: {
-    width: '100%',
-  },
 }))
 
 const Home = (props) => {
@@ -32,13 +31,12 @@ const Home = (props) => {
       {/* Home Banner Section */}
       <Paper className={classes.banner}>
         <Text />
-        {/* <img
-          src="/home/banner.png"
-          alt="Home Banner"
-          className={classes.image}
-        /> */}
       </Paper>
-      <Container></Container>
+      {/* Home About Section */}
+      <About />
+      {/* Home Experience Section */}
+      <Experience />
+      {/* Home Contact Section */}
     </Box>
   )
 }
