@@ -4,6 +4,7 @@ import { Box, Container, Paper } from '@material-ui/core'
 import Text from './Text'
 import About from './About'
 import Experience from './Experience'
+import Contact from './Contact'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -37,6 +38,7 @@ const Home = (props) => {
       {/* Home Experience Section */}
       <Experience />
       {/* Home Contact Section */}
+      <Contact />
     </Box>
   )
 }

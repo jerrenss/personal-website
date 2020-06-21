@@ -2,6 +2,7 @@ import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import { Box, Typography, Button } from '@material-ui/core'
 import { FONTS, PALETTE } from '../utils/const'
+import PropTypes from 'prop-types'
 
 const defaultText = {
   fontFamily: FONTS.montserrat,
@@ -37,6 +38,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const JobCard = (props) => {
+  JobCard.propTypes = {
+    image: PropTypes.string,
+    alt: PropTypes.string,
+    role: PropTypes.string,
+  }
   const { image, alt, role } = props
   const classes = useStyles()
 
