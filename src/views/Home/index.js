@@ -1,6 +1,6 @@
 import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
-import { Box, Paper } from '@material-ui/core'
+import { Paper } from '@material-ui/core'
 import Text from './Text'
 import About from './About'
 import Experience from './Experience'
