@@ -37,9 +37,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
   },
-  rightPanel: {
+  knowledgePanel: {
     '& .MuiGrid-item:first-child': {
       marginBottom: theme.spacing(5),
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(4),
     },
   },
   textWrapper: {
@@ -47,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: 'thin',
     height: 'fit-content',
     padding: theme.spacing(4, 6),
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(2),
+    },
   },
   title: {
     display: 'flex',
@@ -66,7 +72,7 @@ const About = (props) => {
     <Box className={classes.root}>
       <Container maxWidth="lg">
         <Grid container className={classes.gridWrapper}>
-          <Grid item xs={6} className={classes.textWrapper}>
+          <Grid item xs={12} sm={6} className={classes.textWrapper}>
             <Box className={classes.title}>
               <FaceIcon />
               <Typography variant="h5">About Myself</Typography>
@@ -75,7 +81,7 @@ const About = (props) => {
             <br />
             <Typography>{MOCK_ABOUT.secondPara}</Typography>
           </Grid>
-          <Grid item container xs={4} className={classes.rightPanel}>
+          <Grid item container xs={12} sm={4} className={classes.knowledgePanel}>
             <Grid item xs={12} className={classes.textWrapper}>
               <Box className={classes.title}>
                 <SchoolIcon />

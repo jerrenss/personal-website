@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiTypography-root': {
       ...defaultText,
     },
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(10, 0),
+    },
   },
   personalDetailsWrapper: {
     display: 'flex',
@@ -59,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     border: 'solid',
     borderWidth: 'thin',
     textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(2),
+    },
   },
   fields: {
     display: 'flex',
@@ -86,7 +92,7 @@ const Contact = (props) => {
     <Box className={classes.root}>
       <Container>
         <Grid container>
-          <Grid item xs={6} className={classes.personalDetailsWrapper}>
+          <Grid item xs={12} md={6} className={classes.personalDetailsWrapper}>
             <Typography className={classes.emailLabel}>Email:</Typography>
             <Typography>gerrenseow@gmail.com</Typography>
             <Box>
@@ -101,7 +107,7 @@ const Contact = (props) => {
               </IconButton>
             </Box>
           </Grid>
-          <Grid item xs={6} className={classes.formWrapper}>
+          <Grid item xs={12} md={6} className={classes.formWrapper}>
             <Box className={classes.title}>
               <PeopleIcon />
               <Typography variant="h5">Let's Connect</Typography>

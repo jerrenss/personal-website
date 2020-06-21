@@ -30,7 +30,7 @@ const Experience = (props) => {
   const classes = useStyles()
 
   const GALLERY = MOCK_EXPERIENCES.map((experience) => (
-    <Grid item xs={4}>
+    <Grid item xs={12} sm={6} md={4}>
       <JobCard
         image={experience.image}
         alt={experience.alt}

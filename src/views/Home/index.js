@@ -5,6 +5,7 @@ import Text from './Text'
 import About from './About'
 import Experience from './Experience'
 import Contact from './Contact'
+import Layout from '../../components/Layout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -28,7 +29,7 @@ const Home = (props) => {
   const classes = useStyles()
 
   return (
-    <Box>
+    <Layout>
       {/* Home Banner Section */}
       <Paper className={classes.banner}>
         <Text />
@@ -39,7 +40,7 @@ const Home = (props) => {
       <Experience />
       {/* Home Contact Section */}
       <Contact />
-    </Box>
+    </Layout>
   )
 }
 
