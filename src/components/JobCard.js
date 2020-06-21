@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   roleText: {
+    marginTop: theme.spacing(2),
+    textTransform: 'uppercase',
     fontWeight: 600,
   },
   button: {
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     borderRadius: 20,
     fontWeight: 600,
-    textTransform: 'capitalize',
+    fontSize: theme.typography.pxToRem(16),
   },
 }))
 

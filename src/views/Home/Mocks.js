@@ -27,18 +27,24 @@ export const MOCK_ABOUT = {
 
 export const MOCK_EXPERIENCES = [
   {
-    image: '/Home/amaris_logo.png',
-    alt: 'Amaris AI',
-    role: 'Artifical Intelligence Intern',
-  },
-  {
-    image: '/Home/nus_computing_logo.png',
-    alt: 'NUS School Of Computing',
-    role: 'Teaching Assistant',
+    image: '/Home/vouch_logo.png',
+    alt: 'Vouch SG',
+    role: 'Software Engineer Intern',
   },
   {
     image: '/Home/one_x_tech_logo.png',
     alt: 'One X Tech',
     role: 'Software Engineer Intern',
   },
+  {
+    image: '/Home/amaris_ai_logo.png',
+    alt: 'Amaris AI',
+    role: 'Artifical Intelligence Intern',
+  },
+  {
+    image: '/Home/nus_logo.png',
+    alt: 'NUS School Of Computing',
+    role: 'Teaching Assistant',
+  },
+
 ]

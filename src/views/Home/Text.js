@@ -42,7 +42,7 @@ const Text = (props) => {
         options={{
           wrapperClassName: classes.interestText,
           cursorClassName: classes.interestText,
-          strings: ['A Web Development Enthusiast'],
+          strings: ['<> A Web Development Enthusiast </>'],
           autoStart: true,
           loop: true,
         }}
