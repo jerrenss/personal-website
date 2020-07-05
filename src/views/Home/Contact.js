@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import {
   Box,
@@ -8,12 +8,15 @@ import {
   IconButton,
   TextField,
   Button,
+  Link,
 } from '@material-ui/core'
 import { FONTS, PALETTE } from '../../utils/const'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import PeopleIcon from '@material-ui/icons/People'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const defaultText = {
   fontFamily: FONTS.montserrat,
@@ -47,6 +50,16 @@ const useStyles = makeStyles((theme) => ({
   },
   emailLabel: {
     fontWeight: 700,
+  },
+  linksWrapper: {
+    padding: theme.spacing(1, 0),
+    '& .MuiSvgIcon-root': {
+      padding: theme.spacing(0.5),
+      '&:hover': {
+        borderRadius: 15,
+        backgroundColor: PALETTE.background.secondary,
+      },
+    },
   },
   title: {
     display: 'flex',
@@ -87,24 +100,30 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = (props) => {
   const classes = useStyles()
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    })
+    AOS.refresh()
+  })
 
   return (
     <Box className={classes.root}>
       <Container>
-        <Grid container>
+        <Grid container data-aos="fade-left">
           <Grid item xs={12} md={6} className={classes.personalDetailsWrapper}>
             <Typography className={classes.emailLabel}>Email:</Typography>
             <Typography>gerrenseow@gmail.com</Typography>
-            <Box>
-              <IconButton>
+            <Box className={classes.linksWrapper}>
+              <Link href="https://www.instagram.com/jerrens_/">
                 <InstagramIcon />
-              </IconButton>
-              <IconButton>
+              </Link>
+              <Link href="https://www.linkedin.com/in/gerren-seow-675005167/">
                 <LinkedInIcon />
-              </IconButton>
-              <IconButton>
+              </Link>
+              <Link href="https://github.com/jerrenss/">
                 <GitHubIcon />
-              </IconButton>
+              </Link>
             </Box>
           </Grid>
           <Grid item xs={12} md={6} className={classes.formWrapper}>

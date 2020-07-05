@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import React from 'react'
+import React, { useEffect } from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import {
   Box,
@@ -14,6 +14,8 @@ import { MOCK_ABOUT } from './Mocks'
 import FaceIcon from '@material-ui/icons/Face'
 import SchoolIcon from '@material-ui/icons/School'
 import ComputerIcon from '@material-ui/icons/Computer'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const defaultText = {
   fontFamily: FONTS.montserrat,
@@ -67,12 +69,18 @@ const useStyles = makeStyles((theme) => ({
 
 const About = (props) => {
   const classes = useStyles()
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    })
+    AOS.refresh()
+  })
 
   return (
     <Box className={classes.root}>
       <Container maxWidth="lg">
         <Grid container className={classes.gridWrapper}>
-          <Grid item xs={12} sm={6} className={classes.textWrapper}>
+          <Grid item xs={12} sm={6} className={classes.textWrapper} data-aos="fade-left">
             <Box className={classes.title}>
               <FaceIcon />
               <Typography variant="h5">About Myself</Typography>
@@ -81,7 +89,7 @@ const About = (props) => {
             <br />
             <Typography>{MOCK_ABOUT.secondPara}</Typography>
           </Grid>
-          <Grid item container xs={12} sm={4} className={classes.knowledgePanel}>
+          <Grid item container xs={12} sm={4} className={classes.knowledgePanel} data-aos="fade-left">
             <Grid item xs={12} className={classes.textWrapper}>
               <Box className={classes.title}>
                 <SchoolIcon />

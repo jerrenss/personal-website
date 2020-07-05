@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/jsx-key */
-import React from 'react'
+import React, { useEffect } from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import { Box, Grid, Container } from '@material-ui/core'
 import { PALETTE } from '../../utils/const'
@@ -11,6 +11,8 @@ import 'swiper/css/swiper.css'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 import clsx from 'clsx'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +30,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Experience = (props) => {
   const classes = useStyles()
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    })
+    AOS.refresh()
+  })
+
 
   const GALLERY = MOCK_EXPERIENCES.map((experience) => (
     <Grid item xs={12} sm={6} md={4}>
@@ -63,7 +72,7 @@ const Experience = (props) => {
   return (
     <Box className={classes.root}>
       <Container>
-        <Grid container>
+        <Grid container data-aos="fade-right">
           <Swiper {...swiperParams}>{GALLERY}</Swiper>
         </Grid>
       </Container>
