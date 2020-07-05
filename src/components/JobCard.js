@@ -1,6 +1,6 @@
 import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
-import { Box, Typography, Button } from '@material-ui/core'
+import { Box, Typography, Button, Modal } from '@material-ui/core'
 import { FONTS, PALETTE } from '../utils/const'
 import PropTypes from 'prop-types'
 
@@ -37,6 +37,22 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     fontSize: theme.typography.pxToRem(16),
   },
+  paper: {
+    width: 600,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    outline: 'none',
+    boxShadow: theme.shadows[20],
+    maxHeight: '100%',
+    overflowY: 'auto',
+    maxWidth: '100%',
+    background: theme.palette.background.paper,
+    [theme.breakpoints.down('xs')]: {
+      width: 330,
+    },
+  },
 }))
 
 const JobCard = (props) => {
@@ -48,13 +64,33 @@ const JobCard = (props) => {
   const { image, alt, role } = props
   const classes = useStyles()
 
+  const [open, setOpen] = React.useState(false)
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   return (
     <Box className={classes.root}>
       <img src={image} alt={alt} />
       <Typography className={classes.roleText}>{role}</Typography>
-      <Button variant="contained" fullWidth className={classes.button}>
+      <Button
+        variant="contained"
+        fullWidth
+        className={classes.button}
+        onClick={handleOpen}
+      >
         Job Description
       </Button>
+      <Modal open={open} onClose={handleClose}>
+        <Box className={classes.paper}>
+          <Typography>Job Description</Typography>
+        </Box>
+      </Modal>
     </Box>
   )
 }
